@@ -54,7 +54,7 @@ def dialog_box(options1,options2,options3,options4,text):
             time.sleep(0.2)
         else:
             if keyboard.is_pressed("up"):
-                os.sytem("cls")
+                os.system("cls")
                 print(text)
                 choice_num -= 1
                 if choice_num < 0:
