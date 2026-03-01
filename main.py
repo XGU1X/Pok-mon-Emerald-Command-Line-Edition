@@ -57,7 +57,6 @@ if choice_num == 0:
     functions.dialog_box(["",0],["",1],["",2],["",3],"而且这次也有你自己的房间了，%s！我们先进屋吧。"%(name))
     functions.location_cutscenes("新家 一楼")
     functions.dialog_box(["",0],["",1],["",2],["",3],"妈妈：怎么样，%s？\n这儿不错吧？"%(name))
-    functions.dialog_box(["",0],["",1],["",2],["",3],"%s，你的房间在楼上，去看看吧，宝贝！"%(name))
     functions.dialog_box(["",0],["",1],["",2],["",3],"搬家公司的宝可梦帮我们把东西\n都搬进来，还会帮忙打扫房间。真方便！")
     functions.dialog_box(["",0],["",1],["",2],["",3],"%s，你的房间在楼上，去看看吧，宝贝！"%(name))
     functions.dialog_box(["",0],["",1],["",2],["",3],"爸爸给你买了个钟，\n这样你就能知道时间了。别忘了调钟啊！")
