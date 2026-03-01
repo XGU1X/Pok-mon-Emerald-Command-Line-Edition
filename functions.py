@@ -18,38 +18,22 @@ def main_interface(interface_type,num):
                     print(">存档"+txt_files[i-1].split(".")[0]+"     ")
                 else:
                     print("存档"+txt_files[i-1].split(".")[0]+"     ")
-def dialog_box(options1,options2,options3,options4,text):
+def dialog_box(options_list,text):
     max_choice_num = 0
     i = 0
     choice_num = 0
-    options_list = []
-    if options1[0] != "":
-        max_choice_num += 1
-        options_list.append(options1[0])
-    if options2[0] != "":
-        max_choice_num += 1
-        options_list.append(options2[0])
-    if options3[0] != "":
-        max_choice_num += 1
-        options_list.append(options3[0])
-    if options4[0] != "":
-        max_choice_num += 1
-        options_list.append(options4[0])
-    if len(options_list) == 0:
+    max_choice_num = len(options_list) - 1
+    if max_choice_num+1== 0:
         os.system("cls")
         print(text)
         input()
         return 0
-    
-    if max_choice_num != 0:
-        max_choice_num -= 1
-    
     while True:
         if i == 0:
             os.system("cls")
             print(text)
-            for option in options_list:
-                print(option)
+            for option in range(max_choice_num+1):
+                print(options_list[option])
             i = 1
             time.sleep(0.2)
         else:
@@ -57,11 +41,11 @@ def dialog_box(options1,options2,options3,options4,text):
                 os.system("cls")
                 print(text)
                 choice_num -= 1
-                if choice_num < 0:
+                if choice_num< 0:
                     choice_num = max_choice_num
                 
                 for j in range(len(options_list)):
-                    if j == choice_num:
+                    if j== choice_num:
                         print(">" + options_list[j])
                     else:
                         print(options_list[j])
@@ -74,7 +58,7 @@ def dialog_box(options1,options2,options3,options4,text):
                 if choice_num > max_choice_num:
                     choice_num = 0
                 
-                for j in range(len(options_list)):
+                for j in range(max_choice_num + 1):
                     if j == choice_num:
                         print(">" + options_list[j])
                     else:
