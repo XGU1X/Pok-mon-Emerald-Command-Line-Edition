@@ -1,31 +1,10 @@
-import functions, os, keyboard, time, glob, datetime
+import functions,os,datetime
 os.system("cls")
-functions.main_interface(True, 0)
-txt_files = glob.glob('*.txt')
-max_choices = len(txt_files)
-choice_num = 0
 name = ""
 center = 0
-while True:
-    if keyboard.is_pressed("up"):
-        os.system("cls")
-        choice_num -= 1
-        if choice_num < 0:
-            choice_num = max_choices
-        functions.main_interface(False, choice_num)
-        time.sleep(0.15)
-    elif keyboard.is_pressed("down"):
-        os.system("cls")
-        choice_num += 1
-        if choice_num > max_choices:
-            choice_num = 0
-        functions.main_interface(False, choice_num)
-        time.sleep(0.15)
-    elif keyboard.is_pressed("enter"):
-        break
-    time.sleep(0.05)
+archive = functions.main_interface()
 os.system("cls")
-if choice_num == 0:
+if archive == 0:
     functions.dialog_box([], "你好！让你久等了！（按回车键继续）")
     functions.dialog_box([], "欢迎来到精灵宝可梦的世界！")
     functions.dialog_box([], "我是小田卷。")
@@ -63,7 +42,7 @@ if choice_num == 0:
     functions.dialog_box([], "（过动猿在打扫房间）")
     functions.location_cutscenes("新家 二楼")
     functions.dialog_box([], "钟停了，把它调好吧！")
-    input(f"现在是{datetime.datetime.now().hour}点，请你输入当前是几点")
+    input(f"现在是{datetime.datetime.now().hour}点，请你再次输入")
     os.system("cls")
     functions.dialog_box([], f"妈妈：{name}，喜欢你的\n新房间吗？")
     functions.dialog_box([], "好！房间都清理干净了！")
@@ -80,3 +59,4 @@ if choice_num == 0:
         functions.dialog_box([], "冒险须知第二条：保存选项可以记录")
         functions.dialog_box([], "后面是空白")
     functions.dialog_box(["去一楼"], "接下来你要干什么？")
+    
